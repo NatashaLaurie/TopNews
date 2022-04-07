@@ -1,4 +1,4 @@
-package com.example.topnews.newsData
+package com.example.topnews.models
 
 data class NewsResponse(
     val copyright: String,
