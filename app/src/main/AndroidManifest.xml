@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TopNews">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.TopNewsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
