@@ -14,4 +14,14 @@ class Converters {
     fun toMultimedia(url: String): List<Multimedia> {
         return listOf(Multimedia("", "", "", 0, "", "", url, 0))
     }
+
+    @TypeConverter
+    fun fromList(item: List<String>): String {
+        return item[0]
+    }
+
+    @TypeConverter
+    fun toList(item: String): List<String> {
+        return listOf(item)
+    }
 }
