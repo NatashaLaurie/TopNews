@@ -3,6 +3,7 @@ package com.example.topnews.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.topnews.R
@@ -18,10 +19,16 @@ class TopNewsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_top_news)
 
-        val repository = NewsRepository(ArticleDB(this))
-        val viewModelProviderFactory = NewsViewModelProviderFactory(repository)
-        viewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
+        val navHostFragment = supportFragmentManager.findFragmentById(
+            R.id.newsNavHostFragment
+        ) as NavHostFragment
 
-        bottomNavigationView.setupWithNavController(newsNavHostFragment.findNavController())
+        val navController = navHostFragment.navController
+
+        val newsRepository = NewsRepository(ArticleDB(this))
+        val viewModelProviderFactory = NewsViewModelProviderFactory(newsRepository)
+        viewModel = ViewModelProvider(this, viewModelProviderFactory)[NewsViewModel::class.java]
+
+        bottomNavigationView.setupWithNavController(navController)
     }
 }

@@ -8,16 +8,23 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface NewsAPI {
-    @GET("v2/home")
+    @GET("v2/top-headlines")
     suspend fun getTopNews(
-        @Query("api-key")
+        @Query("country")
+        countryCode: String = "us",
+        @Query("page")
+        pageNumber: Int = 1,
+        @Query("apiKey")
         apiKey: String = API_KEY
     ): Response<NewsResponse>
 
-    @GET("v2/{section}")
-    suspend fun getCathegoryNews(
-        @Path("section") method: String,
-        @Query("api-key")
+    @GET("v2/everything")
+    suspend fun searchForNews(
+        @Query("q")
+        searchQuery: String,
+        @Query("page")
+        pageNumber: Int = 1,
+        @Query("apiKey")
         apiKey: String = API_KEY
     ): Response<NewsResponse>
 }

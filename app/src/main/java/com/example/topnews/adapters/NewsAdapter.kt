@@ -3,24 +3,25 @@ package com.example.topnews.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.topnews.R
-import com.example.topnews.models.Result
+import com.example.topnews.models.Article
 import kotlinx.android.synthetic.main.item_article.view.*
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
+
     inner class ArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
-    private val differCallback = object : DiffUtil.ItemCallback<Result>() {
-        override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
+    private val differCallback = object : DiffUtil.ItemCallback<Article>() {
+
+        override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem.url == newItem.url
         }
 
-        override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
+        override fun areContentsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem == newItem
         }
     }
@@ -40,11 +41,11 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val article = differ.currentList[position]
         holder.itemView.apply {
-            Glide.with(this).load(article.multimedia[0].url).into(ivArticleImage)
-            tvSource.text = article.section
+            Glide.with(this).load(article.urlToImage).into(ivArticleImage)
+            tvSource.text = article.source.name
             tvTitle.text = article.title
-            tvDescription.text = article.abstract
-            tvPublishedAt.text = article.byline
+            tvDescription.text = article.description
+            tvPublishedAt.text = article.publishedAt
             setOnClickListener {
                 onItemClickListener?.let {
                     it(article)
@@ -57,9 +58,9 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
         return differ.currentList.size
     }
 
-    private var onItemClickListener: ((Result) -> Unit)? = null
+    private var onItemClickListener: ((Article) -> Unit)? = null
 
-    fun setOnItemClickListener(listener: (Result) -> Unit) {
+    fun setOnItemClickListener(listener: (Article) -> Unit) {
         onItemClickListener = listener
     }
 }

@@ -6,7 +6,10 @@
         <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable/ic_search_anime.xml" value="0.124" />
         <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/activity_top_news.xml" value="0.1947463768115942" />
         <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/fragment_article.xml" value="0.1947463768115942" />
-        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/item_article.xml" value="0.11481481481481481" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/fragment_saved_news.xml" value="0.1" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/fragment_search_news.xml" value="0.1" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/fragment_top_news.xml" value="0.264" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/item_article.xml" value="0.1" />
         <entry key="..\:/androidApps/TopNews/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
       </map>
     </option>

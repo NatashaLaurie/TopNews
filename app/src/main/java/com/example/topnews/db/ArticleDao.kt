@@ -2,16 +2,16 @@ package com.example.topnews.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.topnews.models.Result
+import com.example.topnews.models.Article
 
 @Dao
 interface ArticleDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(article: Result): Long
+    suspend fun upsert(article: Article): Long
 
     @Query("SELECT * FROM articles")
-    fun getAllArticles(): LiveData<List<Result>>
+    fun getAllArticles(): LiveData<List<Article>>
 
     @Delete
-    suspend fun deleteArticle(article: Result)
+    suspend fun deleteArticle(article: Article)
 }
