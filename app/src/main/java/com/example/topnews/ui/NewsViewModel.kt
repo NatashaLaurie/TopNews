@@ -23,6 +23,7 @@ class NewsViewModel(
     fun getTopNews(countryCode: String) = viewModelScope.launch {
         topNews.postValue(Resource.Loading())
         val response = newsRepository.getTopNews(countryCode, topNewsPge)
+        topNews.postValue(handleTopNewsResponse(response))
     }
 
     private fun handleTopNewsResponse(response: Response<NewsResponse>) : Resource<NewsResponse> {
