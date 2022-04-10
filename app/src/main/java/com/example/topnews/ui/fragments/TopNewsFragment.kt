@@ -5,6 +5,8 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.topnews.R
@@ -25,6 +27,16 @@ class TopNewsFragment : Fragment(R.layout.fragment_top_news) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as TopNewsActivity).viewModel
         setupRecyclerView()
+
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("article", it)
+            }
+            findNavController().navigate(
+                R.id.action_topNewsFragment_to_articleFragment,
+                bundle
+            )
+        }
 
         viewModel.topNews.observe(viewLifecycleOwner, Observer { response ->
             when (response) {

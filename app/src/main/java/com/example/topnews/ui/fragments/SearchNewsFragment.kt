@@ -6,6 +6,7 @@ import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.topnews.R
 import com.example.topnews.adapters.NewsAdapter
@@ -33,14 +34,24 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
         viewModel = (activity as TopNewsActivity).viewModel
         setupRecyclerView()
 
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("article", it)
+            }
+            findNavController().navigate(
+                R.id.action_searchNewsFragment_to_articleFragment,
+                bundle
+            )
+        }
+
         var job: Job? = null
-        etSearch.addTextChangedListener { editabable ->
+        etSearch.addTextChangedListener { editable ->
             job?.cancel()
             job = MainScope().launch {
                 delay(SEARCH_NEWS_TIME_DELAY)
-                editabable?.let {
-                    if (editabable.toString().isNotEmpty()) {
-                        viewModel.searchNews(editabable.toString())
+                editable?.let {
+                    if (editable.toString().isNotEmpty()) {
+                        viewModel.searchNews(editable.toString())
                     }
                 }
             }
