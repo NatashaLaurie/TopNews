@@ -1,9 +1,12 @@
 package com.example.topnews.ui.fragments
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AbsListView
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
@@ -25,6 +28,7 @@ class TopNewsFragment : Fragment(R.layout.fragment_top_news) {
 
     private val TAG = "TopNewsFragment"
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as TopNewsActivity).viewModel
@@ -57,6 +61,7 @@ class TopNewsFragment : Fragment(R.layout.fragment_top_news) {
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let { message ->
+                        Toast.makeText(activity, "an error occurred: $message", Toast.LENGTH_LONG).show()
                         Log.e(TAG, "An error occurred: $message")
                     }
                 }
@@ -91,6 +96,7 @@ class TopNewsFragment : Fragment(R.layout.fragment_top_news) {
             }
         }
 
+        @RequiresApi(Build.VERSION_CODES.M)
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
 
