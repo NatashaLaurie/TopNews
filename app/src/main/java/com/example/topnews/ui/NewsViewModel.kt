@@ -8,9 +8,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.Query
 import com.example.topnews.TopNewsApplication
 import com.example.topnews.models.Article
 import com.example.topnews.models.NewsResponse

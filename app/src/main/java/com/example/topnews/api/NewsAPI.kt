@@ -4,7 +4,6 @@ import com.example.topnews.models.NewsResponse
 import com.example.topnews.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface NewsAPI {
