@@ -9,8 +9,8 @@ import com.example.topnews.repository.NewsRepository
 
 class NewsViewModelProviderFactory(
     val app: Application,
-    val newsRepository: NewsRepository
-): ViewModelProvider.Factory {
+    private val newsRepository: NewsRepository
+) : ViewModelProvider.Factory {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return NewsViewModel(app, newsRepository) as T

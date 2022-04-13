@@ -18,6 +18,7 @@ class TopNewsActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_TopNews)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_top_news)
 

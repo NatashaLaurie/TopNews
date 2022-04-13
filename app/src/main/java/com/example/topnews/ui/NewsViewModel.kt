@@ -44,6 +44,7 @@ class NewsViewModel(
 
     fun searchNews(searchQuery: String) = viewModelScope.launch {
         safeSearchNewsCall(searchQuery)
+
     }
 
     private fun handleTopNewsResponse(response: Response<NewsResponse>): Resource<NewsResponse> {

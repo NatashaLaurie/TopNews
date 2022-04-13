@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -53,7 +52,7 @@ class TopNewsFragment : Fragment(R.layout.fragment_top_news) {
                         val totalPages = newsResponse.totalResults / QUERY_PAGE_SIZE + 2
                         isLastPage = viewModel.topNewsPage == totalPages
                         if (isLastPage) {
-                            rvBreakingNews.setPadding(0,0,0,0)
+                            rvBreakingNews.setPadding(0, 0, 0, 0)
                         }
                     }
 
@@ -61,7 +60,8 @@ class TopNewsFragment : Fragment(R.layout.fragment_top_news) {
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let { message ->
-                        Toast.makeText(activity, "an error occurred: $message", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, "an error occurred: $message", Toast.LENGTH_LONG)
+                            .show()
                         Log.e(TAG, "An error occurred: $message")
                     }
                 }

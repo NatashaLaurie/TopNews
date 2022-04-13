@@ -15,7 +15,9 @@
         android:theme="@style/Theme.TopNews">
         <activity
             android:name=".ui.TopNewsActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/TopNews.Launcher"
+           >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

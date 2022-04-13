@@ -17,13 +17,11 @@ import com.example.topnews.R
 import com.example.topnews.adapters.NewsAdapter
 import com.example.topnews.ui.NewsViewModel
 import com.example.topnews.ui.TopNewsActivity
-import com.example.topnews.util.Constants
 import com.example.topnews.util.Constants.Companion.QUERY_PAGE_SIZE
 import com.example.topnews.util.Constants.Companion.SEARCH_NEWS_TIME_DELAY
 import com.example.topnews.util.Resource
 import kotlinx.android.synthetic.main.fragment_search_news.*
 import kotlinx.android.synthetic.main.fragment_search_news.paginationProgressBar
-import kotlinx.android.synthetic.main.fragment_top_news.*
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
@@ -75,7 +73,7 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
                         val totalPages = newsResponse.totalResults / QUERY_PAGE_SIZE + 2
                         isLastPage = viewModel.searchNewsPage == totalPages
                         if (isLastPage) {
-                            rvSearchNews.setPadding(0,0,0,0)
+                            rvSearchNews.setPadding(0, 0, 0, 0)
                         }
                     }
 
@@ -83,7 +81,8 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let { message ->
-                        Toast.makeText(activity, "an error occurred: $message", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity, "an error occurred: $message", Toast.LENGTH_LONG)
+                            .show()
                         Log.e(TAG, "An error occurred: $message")
                     }
                 }

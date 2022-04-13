@@ -13,7 +13,6 @@ import com.example.topnews.R
 import com.example.topnews.ui.NewsViewModel
 import com.example.topnews.ui.TopNewsActivity
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_article.*
 
 

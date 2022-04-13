@@ -10,6 +10,9 @@ import com.bumptech.glide.Glide
 import com.example.topnews.R
 import com.example.topnews.models.Article
 import kotlinx.android.synthetic.main.item_article.view.*
+import java.time.LocalDate
+import java.time.OffsetDateTime
+import java.time.format.DateTimeFormatter
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
 
@@ -45,7 +48,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
             tvSource.text = article.source?.name
             tvTitle.text = article.title
             tvDescription.text = article.description
-            tvPublishedAt.text = article.publishedAt
+            tvPublishedAt.text = OffsetDateTime.parse(article.publishedAt).format(DateTimeFormatter.ofPattern("MM/dd/yyyy 'at' hh:mm")).toString()
             setOnClickListener {
                 onItemClickListener?.let {
                     it(article)

@@ -3,14 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable-v23/launch_screen.xml" value="0.1745" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.116" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable/ic_favorite.xml" value="0.1" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable/ic_search_anime.xml" value="0.124" />
-        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/activity_top_news.xml" value="0.1947463768115942" />
-        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/fragment_article.xml" value="0.1947463768115942" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable/ic_search_news.xml" value="0.1" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable/ic_top_news.xml" value="0.1" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable/launch_screen.xml" value="0.1745" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable/separator.xml" value="0.2285" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable/top_news_icon.xml" value="0.1745" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/drawable/trending_gradient_shape.xml" value="0.245" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/activity_top_news.xml" value="0.1" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/fragment_article.xml" value="0.1" />
         <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/fragment_saved_news.xml" value="0.1" />
-        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/fragment_search_news.xml" value="0.1" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/fragment_search_news.xml" value="0.4" />
         <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/fragment_top_news.xml" value="0.264" />
-        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/item_article.xml" value="0.1" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/layout/item_article.xml" value="0.4" />
         <entry key="..\:/androidApps/TopNews/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15" />
+        <entry key="..\:/androidApps/TopNews/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15" />
       </map>
     </option>
   </component>

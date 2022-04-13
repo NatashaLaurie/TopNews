@@ -13,7 +13,7 @@ import com.example.topnews.models.Article
 )
 @TypeConverters(Converters::class)
 abstract class ArticleDB : RoomDatabase() {
-    abstract fun getArticleDao() : ArticleDao
+    abstract fun getArticleDao(): ArticleDao
 
     companion object {
         @Volatile
@@ -21,14 +21,14 @@ abstract class ArticleDB : RoomDatabase() {
         private val LOCK = Any()
 
         operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
-            instance ?: createDatabase(context).also { instance = it}
+            instance ?: createDatabase(context).also { instance = it }
         }
 
         private fun createDatabase(context: Context) =
             Room.databaseBuilder(
                 context.applicationContext,
                 ArticleDB::class.java,
-                "articleDB.db"
+                "articleDataBase.db"
             ).build()
     }
 }
